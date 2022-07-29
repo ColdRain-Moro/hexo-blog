@@ -1,0 +1,22 @@
+---
+title: 开发了第一个自己的安卓软件
+date: 2021-10-15 15:39:46
+author: 寒雨
+hide: false
+summary: 开发了一个处理正则表达式的小Android软件
+categories: 杂谈
+tags:
+  - Android
+---
+
+安卓开发的书看了不少了，我却鲜有实践。于是今天我决定尝试一下，于是就有了它 [ColdRain-Moro/RegexTesterAndroid: 我的第一个安卓程序 (github.com)](https://github.com/ColdRain-Moro/RegexTesterAndroid)
+
+我写的程序太多了，但它也许是其中唯一一个够格被称之为软件的程序，因为它可以独立运行，并且具有一定的有意义的功能，并且有还算能看的UI界面。（虽然它的代码量非常的少）我以前做的Minecraft插件开发其实都只是对于Minecraft服务端功能的修改罢了。
+
+其实我不是很喜欢Android这种用xml来做ui布局的做法 （感觉...不如html+css），所幸Android Studio提供了便捷的UI编辑工具。Jetpack Compose才是最合我口味的ui编辑方式，就是我凭我现在的能力也许还不足以能掌握它。
+
+总之，先老老实实学点基础吧，好高骛远也不是件好事
+
+[![regextester](https://camo.githubusercontent.com/323eccd940618f7f7dc6deaf6b8f3fe43cb052597f3369fb2e7d9684dca903c6/68747470733a2f2f67697465652e636f6d2f636f6c647261696e2d6d6f726f2f696d616765735f6265642f7261772f6d61737465722f696d616765732f72656765787465737465722e706e67)](https://camo.githubusercontent.com/323eccd940618f7f7dc6deaf6b8f3fe43cb052597f3369fb2e7d9684dca903c6/68747470733a2f2f67697465652e636f6d2f636f6c647261696e2d6d6f726f2f696d616765735f6265642f7261772f6d61737465722f696d616765732f72656765787465737465722e706e67)
+
+[![regextester_1](https://camo.githubusercontent.com/bfcac0a18ebee0c5aa1f20e4641b7d77880f423ebe1647df51281f35fb109845/68747470733a2f2f67697465652e636f6d2f636f6c647261696e2d6d6f726f2f696d616765735f6265642f7261772f6d61737465722f696d616765732f72656765787465737465725f312e706e67)](https://camo.githubusercontent.com/bfcac0a18ebee0c5aa1f20e4641b7d77880f423ebe1647df51281f35fb109845/68747470733a2f2f67697465652e636f6d2f636f6c647261696e2d6d6f726f2f696d616765735f6265642f7261772f6d61737465722f696d616765732f72656765787465737465725f312e706e67)
