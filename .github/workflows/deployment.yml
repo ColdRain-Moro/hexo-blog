@@ -1,42 +1,33 @@
-name: Deployment
+name: Hexo Blog CI & CD
 
 on:
   push:
-    branches: [master] # only push events on source branch trigger deployment
+    branches:
+      - master  # 存放 Hexo 源文件的分支
 
 jobs:
-  hexo-deployment:
+  pages:
     runs-on: ubuntu-latest
-    env:
-      TZ: Asia/Shanghai
-
     steps:
-    - name: Checkout source
-      uses: actions/checkout@v2
-      with:
-        submodules: true
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-
-    - name: Install dependencies & Generate static files
-      run: |
-        node -v
-        npm i -g hexo-cli
-        npm i
-        hexo clean
-        hexo g
-    - name: Deploy to Github Pages
-      env:
-        GIT_NAME: ColdRain-Moro
-        GIT_EMAIL: ${{ secrets.GIT_EMAIL }}
-        REPO: github.com/ColdRain-Moro/hexo-blog
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
-      run: |
-        cd ./public && git init && git add .
-        git config --global user.name $GIT_NAME
-        git config --global user.email $GIT_EMAIL
-        git commit -m "Site deployed by GitHub Actions"
-        git push --force --quiet "https://$GH_TOKEN@$REPO" master:gh-pages
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }} # 无需修改
+          publish_dir: ./public  # hexo generate 生成的博客文件默认存放在 /public 目录下
+          publish_branch: gh-pages  # 存放展示的博客文件的分支
