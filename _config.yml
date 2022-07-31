@@ -106,6 +106,7 @@ deploy:
   repo: https://github.com/ColdRain-Moro/MyBlog.git  #你的仓库地址
   branch: gh-pages
   name: 'ColdRain-Moro'
+  token: '$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'
 
 search:
   path: search.xml
