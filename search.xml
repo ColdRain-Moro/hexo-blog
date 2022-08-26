@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>2022下半年目标&amp;项目&amp;学习方向&amp;总结</title>
+      <link href="/2022/08/26/goals-of-the-second-half-of-2022/"/>
+      <url>/2022/08/26/goals-of-the-second-half-of-2022/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2022下半年目标-amp-项目-amp-学习方向-amp-总结"><a href="#2022下半年目标-amp-项目-amp-学习方向-amp-总结" class="headerlink" title="2022下半年目标&amp;项目&amp;学习方向&amp;总结"></a>2022下半年目标&amp;项目&amp;学习方向&amp;总结</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote><p>总之尽可能的多完成几个吧</p></blockquote><ul><li><input disabled="" type="checkbox"> 将我的轻薄本系统刷成Manjaro Linux Gnome (在那之前先换一张阳间一点的无线网卡)</li><li><input disabled="" type="checkbox"> 学Android framework层源码，至少要学到一个自己觉得相对满意的位置</li><li><input disabled="" type="checkbox"> 学Linux内核，同上</li><li><input disabled="" type="checkbox"> 给自己手机刷上Magisk，还可以用LSPosed玩一些hook的骚操作</li><li><input disabled="" type="checkbox"> 不要挂科</li><li><input disabled="" type="checkbox"> 享受自己的大学生活</li></ul><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ul><li><input disabled="" type="checkbox"> EmoticonC<ul><li>类似Hall of fame的表情包管理App，不过管理的是Telegram的表情包，支持一键发送到qq/微信/飞书</li><li>后端使用Golang开发</li></ul></li></ul><h2 id="学习方向"><a href="#学习方向" class="headerlink" title="学习方向"></a>学习方向</h2><ul><li>主要方向<ul><li>Android framework</li><li>某些旁门左道(字节码插桩，注解处理，hook)</li><li>Linux 操作/内核/应用开发</li></ul></li><li>兴趣使然的次要方向<ul><li>Golang web</li><li>Rust</li><li>Machine Learning</li></ul></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote><p>今年结束我会来补上的</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 总结规划 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>浅入浅出JVM</title>
       <link href="/2022/07/31/simple-in-simple-out-jvm/"/>
       <url>/2022/07/31/simple-in-simple-out-jvm/</url>
