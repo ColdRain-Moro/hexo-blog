@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>Android framework层学习笔记</title>
+      <link href="/2022/09/01/framework-study/"/>
+      <url>/2022/09/01/framework-study/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Android-framework层学习笔记"><a href="#Android-framework层学习笔记" class="headerlink" title="Android framework层学习笔记"></a>Android framework层学习笔记</h1><h2 id="零碎的Q-amp-A"><a href="#零碎的Q-amp-A" class="headerlink" title="零碎的Q &amp; A"></a>零碎的Q &amp; A</h2><blockquote><p>为什么SystemService(AMS)进程与Zygote进程通信不使用Binder而使用Socket?</p></blockquote><p>因为Zygote进程的fork操作仅允许在单线程下进行，而Binder之所以高性能的部分原因是因为它是多线程的。</p><blockquote><p>为什么Zygote只能在单线程下fork</p></blockquote><p>先来看看Zygote fork进程的工作原理</p><blockquote><ol><li>父进程的内存数据会原封不动的拷贝到子进程中（copy-on-write策略 -&gt; 复制时内核并不复制整个进程的地址空间，而是让父子进程共享同一个地址空间。只用在需要写入的时候才会复制地址空间，从而使各个进行拥有各自的地址空间。也就是说，资源的复制是在需 要写入的时候才会进行，在此之前，只有以只读方式共享）</li><li><strong>子进程在单线程状态下被生成</strong></li></ol></blockquote><p>注意第二句话，也就是说被fork出来的进程只会带有一条线程，无论父进程有几条线程</p><p>而上面我们说过了，Binder是基于多线程操作的。设想如果我们使用Binder来进行fork操作，会发生什么状况：</p><blockquote><p>如果一个Binder进程有锁，那么其拷贝的子进程上的主线程也会存在锁，子进程等待其子线程的资源来释放其拥有的锁，然而其父进程的子线程并不会拷贝过来，因为根据fork的工作，它的子进程只会被生成单线程，而这样一来就会造成死锁，为了解决这个问题fork就不允许存在多线程，所有Zygote也就不再使用Binder进程了。</p></blockquote><p>这里我有个疑问，如果是不存在锁的多线程呢？这里的解释是因为会导致死锁而不使用多线程，如果压根就没有使用锁呢？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Android </tag>
+            
+            <tag> framework层 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2022下半年目标&amp;项目&amp;学习方向&amp;总结</title>
       <link href="/2022/08/26/goals-of-the-second-half-of-2022/"/>
       <url>/2022/08/26/goals-of-the-second-half-of-2022/</url>
       
-        <content type="html"><![CDATA[<h1 id="2022下半年目标-amp-项目-amp-学习方向-amp-总结"><a href="#2022下半年目标-amp-项目-amp-学习方向-amp-总结" class="headerlink" title="2022下半年目标&amp;项目&amp;学习方向&amp;总结"></a>2022下半年目标&amp;项目&amp;学习方向&amp;总结</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote><p>总之尽可能的多完成几个吧</p></blockquote><ul><li><input disabled="" type="checkbox"> 将我的轻薄本系统刷成Manjaro Linux Gnome (在那之前先换一张阳间一点的无线网卡)</li><li><input disabled="" type="checkbox"> 学Android framework层源码，至少要学到一个自己觉得相对满意的位置</li><li><input disabled="" type="checkbox"> 学Linux内核，同上</li><li><input disabled="" type="checkbox"> 给自己手机刷上Magisk，还可以用LSPosed玩一些hook的骚操作</li><li><input disabled="" type="checkbox"> 不要挂科</li><li><input disabled="" type="checkbox"> 享受自己的大学生活</li></ul><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ul><li><input disabled="" type="checkbox"> EmoticonC<ul><li>类似Hall of fame的表情包管理App，不过管理的是Telegram的表情包，支持一键发送到qq/微信/飞书</li><li>后端使用Golang开发</li></ul></li></ul><h2 id="学习方向"><a href="#学习方向" class="headerlink" title="学习方向"></a>学习方向</h2><ul><li>主要方向<ul><li>Android framework</li><li>某些旁门左道(字节码插桩，注解处理，hook)</li><li>Linux 操作/内核/应用开发</li></ul></li><li>兴趣使然的次要方向<ul><li>Golang web</li><li>Rust</li><li>Machine Learning</li></ul></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote><p>今年结束我会来补上的</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="2022下半年目标-amp-项目-amp-学习方向-amp-总结"><a href="#2022下半年目标-amp-项目-amp-学习方向-amp-总结" class="headerlink" title="2022下半年目标&amp;项目&amp;学习方向&amp;总结"></a>2022下半年目标&amp;项目&amp;学习方向&amp;总结</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><blockquote><p>总之尽可能的多完成几个吧</p></blockquote><ul><li><input disabled="" type="checkbox"> 将我的轻薄本系统刷成Manjaro Linux Gnome (在那之前先换一张阳间一点的无线网卡)</li><li><input disabled="" type="checkbox"> 学Android framework层源码，至少要学到一个自己觉得相对满意的位置</li><li><input disabled="" type="checkbox"> 学Linux内核，同上</li><li><input disabled="" type="checkbox"> 给自己手机刷上Magisk，还可以用LSPosed玩一些hook的骚操作</li><li><input disabled="" type="checkbox"> 不要挂科</li><li><input disabled="" type="checkbox"> 享受自己的大学生活</li></ul><h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ul><li><input disabled="" type="checkbox"> EmoticonC<ul><li>类似Hall of fame的表情包管理App，不过管理的是Telegram的表情包，支持一键发送到qq/微信/飞书</li><li>后端使用Golang开发</li></ul></li><li><input disabled="" type="checkbox"> MiraiQQ<ul><li>一个Mirai Console的Android平台下的前端实现，且具有QQ客户端的功能</li><li>界面尽可能简约，体积尽可能小</li><li>可以加载Mirai插件，自带Rhino引擎来加载Js插件</li></ul></li></ul><h2 id="学习方向"><a href="#学习方向" class="headerlink" title="学习方向"></a>学习方向</h2><ul><li>主要方向<ul><li>Android framework</li><li>某些旁门左道(字节码插桩，注解处理，hook)</li><li>Linux 操作/内核/应用开发</li></ul></li><li>兴趣使然的次要方向<ul><li>Golang web</li><li>Rust</li><li>Machine Learning</li></ul></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote><p>今年结束我会来补上的</p></blockquote>]]></content>
       
       
       <categories>
