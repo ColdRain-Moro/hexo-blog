@@ -26,6 +26,10 @@ tags:
 - [ ] EmoticonC
   - 类似Hall of fame的表情包管理App，不过管理的是Telegram的表情包，支持一键发送到qq/微信/飞书
   - 后端使用Golang开发
+- [ ] MiraiQQ
+  - 一个Mirai Console的Android平台下的前端实现，且具有QQ客户端的功能
+  - 界面尽可能简约，体积尽可能小
+  - 可以加载Mirai插件，自带Rhino引擎来加载Js插件
 
 ## 学习方向
 
