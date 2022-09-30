@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="在DataBinding的使用过程中踩的坑, ColdRain&#39;s Blog">
-    <meta name="description" content="DataBinding可能会导致Kotlin编译器无法smart cast, 而IDE不会标红">
+    <meta name="keywords" content="算法笔记, ColdRain&#39;s Blog">
+    <meta name="description" content="算法笔记汇总处">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>在DataBinding的使用过程中踩的坑 | ColdRain&#39;s Blog</title>
+    <title>算法笔记 | ColdRain&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -248,12 +248,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">在DataBinding的使用过程中踩的坑</h1>
+                    <h1 class="description center-align post-title">算法笔记</h1>
                 </div>
             </div>
         </div>
@@ -369,12 +369,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/">
-                                <span class="chip bg-color">Kotlin</span>
-                            </a>
-                        
-                            <a href="/tags/Android/">
-                                <span class="chip bg-color">Android</span>
+                            <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">算法</span>
                             </a>
                         
                     </div>
@@ -398,21 +394,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2022-09-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-11-22
+                    2022-09-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    350
+                    319
                 </div>
                 
 
@@ -442,31 +438,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="在DataBinding的使用过程中踩的坑"><a href="#在DataBinding的使用过程中踩的坑" class="headerlink" title="在DataBinding的使用过程中踩的坑"></a>在DataBinding的使用过程中踩的坑</h1><p>今天初次尝试了DataBinding，之前一直在用ViewBinding。今天欣喜的发现DataBinding包含了ViewBinding的全部功能，绝绝子。</p>
-<p>DataBinding对于基于MVVM架构理念设计的Android程序来说非常有意义，它可以进一步解耦。</p>
-<p>不说了，来看看我今天遇到的具体问题</p>
+                <h1 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h1><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>顾名思义就是维护两个指针，多说无益，看例题</p>
 <blockquote>
-<p>DataBinding可能会导致Kotlin编译器无法smart cast, 而IDE不会标红</p>
+<h4 id="剑指-Offer-22-链表中倒数第k个节点"><a href="#剑指-Offer-22-链表中倒数第k个节点" class="headerlink" title="剑指 Offer 22. 链表中倒数第k个节点"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">剑指 Offer 22. 链表中倒数第k个节点</a></h4><p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。</p>
+<p>例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。</p>
+<p>示例：</p>
+<blockquote>
+<p> 给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 k = 2.</p>
+<p>返回链表 4-&gt;5.</p>
 </blockquote>
-<p>我在布局文件activity_login.xml中给布局绑定了这样一个变量</p>
-<pre class="line-numbers language-xml" data-language="xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>variable</span>
-        <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>viewModel<span class="token punctuation">"</span></span>
-        <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kim.bifrost.coldrain.wanandroid.viewmodel.LoginViewModel<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */</span>
+<span class="token comment">/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */</span>
+<span class="token keyword">var</span> <span class="token function-variable function">getKthFromEnd</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">head<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> slow<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>head<span class="token punctuation">,</span> head<span class="token punctuation">]</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>fast <span class="token operator">&amp;&amp;</span> k <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">,</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>fast<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> slow<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">,</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> slow
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>如你所见，我在代码中准备使用它</p>
-<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin">binding<span class="token punctuation">.</span>viewModel<span class="token punctuation">.</span><span class="token function">postLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>这行代码在IDE中并没有标红，但无法通过编译</p>
-<pre class="line-numbers language-none"><code class="language-none">e: E:\ColdRain_Moro\AndroidProject\WanAndroid\app\src\main\java\kim\bifrost\coldrain\wanandroid\view\activity\LoginActivity.kt: (31, 13): Smart cast to 'LoginViewModel' is impossible, because 'binding.viewModel' is a complex expression<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>遇事不决问度娘，于是在百度上找到了答案 (<a target="_blank" rel="noopener" href="https://www.javaer101.com/article/52202734.html">在Kotlin中无法进行Smart Cast - Javaer101</a>)</p>
-<p>原来这个viewModel变量的类型实际上是LoginViewModel?，也就是它是允许为空的。而我获取的时候是直接以LoginViewModel的形式获取，它没有办法从LoginViewModel?类型smart cast为LoginViewModel。</p>
-<p>那么在调用的时候后面加个?就解决了。</p>
-<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin">binding<span class="token punctuation">.</span>viewModel<span class="token operator">?</span><span class="token punctuation">.</span><span class="token function">postLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>之所以记录下来，是因为Android Studio没有给之前错误的用法标红，我觉得这个还是应该标个红的。</p>
+<p>维护一快一慢两个指针，先将fast指针向前移动k+1位。再将fast与slow同步向前移动，直到fast指针抵达链表尾部空指针，然后返回slow指针。</p>
+<p>设指针长度len，首先fast指针向前移动了k+1位，故slow指针与fast一同移动的距离为len-(k+1)，即指向倒数第k个元素。</p>
 
                 
             </div>
@@ -493,7 +499,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.coldrain.ink/2021/11/22/problem-databinding/">http://blog.coldrain.ink/2021/11/22/problem-databinding/</a>
+                    <a href="http://blog.coldrain.ink/2022/09/30/double-pointer/">http://blog.coldrain.ink/2022/09/30/double-pointer/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -531,12 +537,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kotlin/">
-                                    <span class="chip bg-color">Kotlin</span>
-                                </a>
-                            
-                                <a href="/tags/Android/">
-                                    <span class="chip bg-color">Android</span>
+                                <a href="/tags/%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">算法</span>
                                 </a>
                             
                         </div>
@@ -848,29 +850,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/11/28/async-javascript/">
+                <a href="/2022/09/30/double-pointer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="对异步概念上的理解以及JavaScript异步操作实现方式">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="算法笔记">
                         
-                        <span class="card-title">对异步概念上的理解以及JavaScript异步操作实现方式</span>
+                        <span class="card-title">算法笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            今天红岩前端上课的笔记
+                            算法笔记汇总处
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -883,15 +886,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9F%A5%E8%AF%86%E6%A2%B3%E7%90%86/">
-                        <span class="chip bg-color">知识梳理</span>
+                    <a href="/tags/%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">算法</span>
                     </a>
                     
                 </div>
@@ -905,24 +905,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/19/javassist-hotswap/">
+                <a href="/2022/09/01/framework-study/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="利用Javassist &amp; Javagent实现类的热替换">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Android framework层学习笔记">
                         
-                        <span class="card-title">利用Javassist &amp; Javagent实现类的热替换</span>
+                        <span class="card-title">Android framework层学习笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            之前Javassist使用中的疑惑终于被我解决了
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
                             </span>
                         <span class="publish-author">
                             
@@ -939,20 +939,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Android/">
+                        <span class="chip bg-color">Android</span>
                     </a>
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
-                        <span class="chip bg-color">外部库</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%97%E8%8A%82%E7%A0%81%E6%93%8D%E4%BD%9C/">
-                        <span class="chip bg-color">字节码操作</span>
+                    <a href="/tags/framework%E5%B1%82/">
+                        <span class="chip bg-color">framework层</span>
                     </a>
                     
                 </div>
