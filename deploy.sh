@@ -6,4 +6,4 @@ git commit -m "site update"
 git push origin master
 
 # 构建
-hexo g -d
+sudo hexo g -d
