@@ -1,5 +1,6 @@
 ---
 title: 记一次严重滚挂——不要滚动更新openssl
+date: 2022-11-23
 author: 寒雨
 hide: false
 summary: 算是踩了个大坑吧，电脑差点变成砖没救回来

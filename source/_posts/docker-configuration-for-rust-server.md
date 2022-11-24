@@ -1,5 +1,6 @@
 ---
 title: 为Rust写的后端配置docker
+date: 2022-05-29
 author: 寒雨
 hide: false
 summary: 直到你开始用rust写后端，发现需要在运行平台编译后才能部署，才明白java跨平台的可贵

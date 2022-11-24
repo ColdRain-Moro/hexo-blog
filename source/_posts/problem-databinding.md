@@ -1,5 +1,6 @@
 ---
 title: 在DataBinding的使用过程中踩的坑
+date: 2021-11-22
 author: 寒雨
 hide: false
 summary: DataBinding可能会导致Kotlin编译器无法smart cast, 而IDE不会标红

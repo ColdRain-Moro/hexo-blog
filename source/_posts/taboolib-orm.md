@@ -1,5 +1,6 @@
 ---
 title: 写了个Kotlin ORM框架
+date: 2022-01-12
 author: 寒雨
 hide: false
 summary: 用动态代理实现了一套基于TabooLib的Kotlin ORM框架

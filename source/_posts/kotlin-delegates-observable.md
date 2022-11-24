@@ -1,5 +1,6 @@
 ---
 title: 利用Kotlin委托快捷的创建可观察属性
+date: 2021-12-18
 author: 寒雨
 hide: false
 summary: 所以LiveData被时代抛弃的理由又多了一个

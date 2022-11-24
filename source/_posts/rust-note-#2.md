@@ -1,5 +1,6 @@
 ---
 title: Rust笔记其二
+date: 2022-05
 author: 寒雨
 hide: false
 summary: 流程控制&模式匹配&方法&泛型&trait

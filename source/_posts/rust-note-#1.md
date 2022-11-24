@@ -1,5 +1,6 @@
 ---
 title: Rust笔记其一
+date: 2022-05-19
 author: 寒雨
 hide: false
 summary: 变量绑定&解构语法&变量遮蔽&类型推导&异常处理

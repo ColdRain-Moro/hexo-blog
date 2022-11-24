@@ -1,5 +1,6 @@
 ---
 title: 2022下半年目标&项目&学习方向&总结
+date: 2022-09-01
 author: 寒雨
 hide: false
 summary: 2022年下半年目标

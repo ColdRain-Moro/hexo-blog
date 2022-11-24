@@ -1,5 +1,6 @@
 ---
 title: Android framework层学习笔记
+date: 2022-09-01
 author: 寒雨
 hide: false
 categories: 笔记

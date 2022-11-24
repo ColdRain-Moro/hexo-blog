@@ -1,5 +1,6 @@
 ---
 title: 浅入浅出JVM
+date: 2022-07-31
 author: 寒雨
 hide: false
 summary: 红岩讲课的课件

@@ -1,5 +1,6 @@
 ---
 title: 2022暑假学习计划
+date: 2022-05-18
 author: 寒雨
 summary: 2022年计划学习的技术栈
 categories: 计划

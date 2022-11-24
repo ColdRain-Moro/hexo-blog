@@ -1,5 +1,6 @@
 ---
 title: 一个Minecraft Chest UI框架的灵感
+date: 2022-01-07
 author: 寒雨
 hide: false
 summary: 我在想，Minecraft的GUI，是不是也可以沿用Compose的那套设计思路...

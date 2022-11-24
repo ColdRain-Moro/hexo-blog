@@ -1,5 +1,6 @@
 ---
 title: Kotlin 泛型协变/逆变学习笔记
+date: 2021-11-13
 author: 寒雨
 hide: false
 summary: Kotlin协变/逆变笔记

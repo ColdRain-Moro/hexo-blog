@@ -1,5 +1,6 @@
 ---
 title: 初试Jetpack Compose
+date: 2021-12-24
 author: 寒雨
 hide: false
 summary: 用Jetpack Compose尝试仿写了Github App的部分内容

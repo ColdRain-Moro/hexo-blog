@@ -1,5 +1,6 @@
 ---
 title: Hello Minecraft Forge & Mixin!
+date: 2021-12-30
 author: 寒雨
 hide: false
 summary: 开发了自己的第一个Forge Mod,并且初步了解了Mixin这一极其实用的字节码操作框架

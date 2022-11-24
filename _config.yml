@@ -106,7 +106,7 @@ deploy:
   repo: https://github.com/ColdRain-Moro/hexo-blog.git  #你的仓库地址
   branch: gh-pages
   name: 'ColdRain-Moro'
-  token: '$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'
+  token: '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'
 
 search:
   path: search.xml

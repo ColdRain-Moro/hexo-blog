@@ -1,5 +1,6 @@
 ---
 title: MMVM七宗罪
+date: 2022-07-31
 author: 寒雨
 hide: false
 summary: 对掘金上关于MMVM常见错误用法的总结

@@ -1,5 +1,6 @@
 ---
 title: 记一次服务器遭到挖矿病毒感染的经历
+date: 2022-05-17
 author: 寒雨
 hide: false
 summary: 2375端口真不能开，开了就中招

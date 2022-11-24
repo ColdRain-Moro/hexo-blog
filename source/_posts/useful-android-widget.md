@@ -1,5 +1,6 @@
 ---
 title: Android 笔记
+date: 2021-12-02
 author: 寒雨
 cover: true
 hide: false
@@ -25,7 +26,7 @@ tags:
 
 ### Toolbar
 
-### BottomNavigationView
+### x     private var itemClickListener: (Int) -> Unit = { }​    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {​        init {            view.setOnClickListener {                itemClickListener(bindingAdapterPosition)            }        }​        val fruitImage: ImageView = view.fruitImage        val fruitName: TextView = view.fruitName    }       /**     * 回调传参     */    fun onItemClick(func: (Int) -> Unit) {        itemClickListener = func    }kotlin
 
 ### TabLayout
 

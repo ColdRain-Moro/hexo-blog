@@ -1,5 +1,6 @@
 ---
 title: 为人生做些减法
+date: 2022-02-23
 author: 寒雨
 hide: false
 summary: 人生应该有所取舍，有所取则应有所舍

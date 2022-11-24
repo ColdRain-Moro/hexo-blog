@@ -1,5 +1,6 @@
 ---
 title: 对异步概念上的理解以及JavaScript异步操作实现方式
+date: 2021-11-29
 author: 寒雨
 hide: false
 summary: 今天红岩前端上课的笔记

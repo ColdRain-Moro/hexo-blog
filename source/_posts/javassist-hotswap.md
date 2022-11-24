@@ -1,5 +1,6 @@
 ---
 title: 利用Javassist & Javagent实现类的热替换
+date: 2021-11-19
 author: 寒雨
 hide: false
 summary: 之前Javassist使用中的疑惑终于被我解决了
