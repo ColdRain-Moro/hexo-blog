@@ -1,5 +1,6 @@
 ---
 title: 算法笔记
+date: 2022-9-30
 author: 寒雨
 hide: false
 summary: 算法笔记汇总处

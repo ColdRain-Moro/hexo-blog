@@ -22,15 +22,17 @@ tags:
 大致做法如下
 **继承PacketPlayOutChat**
 
-```
+```kotlin
 class LegalActionBarPacket(iChatBaseComponent: IChatBaseComponent, chatMessageType: ChatMessageType, uuid: UUID) : PacketPlayOutChat(iChatBaseComponent,chatMessageType,uuid)
 ```
 **ASMVersionControl**
-```
+
+```kotlin
 val legalPacketClass = AsmVersionControl.createNMS("me.asgard.coldrain.hud.module.nms.LegalActionBarPacket").mapping().translate(SacredHUD.plugin) 
 ```
 **数据包监听**
-```
+
+```kotlin
     @TPacket(type = TPacket.Type.SEND)
     private fun send(player: Player, packet: Packet): Boolean {
         if (packet.equals("PacketPlayOutChat")

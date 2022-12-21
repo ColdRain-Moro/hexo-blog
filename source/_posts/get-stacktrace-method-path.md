@@ -26,7 +26,7 @@ tags:
 
 Parctice.kt
 
-```
+```kotlin
 package kim.bifrost.coldrain.partice
 
 /**

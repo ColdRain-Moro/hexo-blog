@@ -14,7 +14,7 @@ tags:
 
 上代码
 
-```
+```kotlin
 val pattern = Pattern.compile("(//d+)(//S+)")
 val matcher = pattern.matcher("2021BifrostCraft")
 if (matcher.find()) {

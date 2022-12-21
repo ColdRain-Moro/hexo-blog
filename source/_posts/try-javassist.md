@@ -17,7 +17,7 @@ tags:
 
 实验代码
 
-```
+```kotlin
 fun main() {
     javassistEdit()
 }
