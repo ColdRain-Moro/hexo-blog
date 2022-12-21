@@ -369,12 +369,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/">
-                                <span class="chip bg-color">Kotlin</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Kotlin/">
+                                <span class="chip bg-color">Kotlin</span>
                             </a>
                         
                     </div>
@@ -405,7 +405,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-24
+                    2022-12-21
                 </div>
                 
 
@@ -449,26 +449,26 @@
 <p>在写一个Exception的时候，你甚至可以重写它的printStackTrace方法让它的报错更好看 （</p>
 <p><strong>例子</strong></p>
 <p>Parctice.kt</p>
-<pre class="line-numbers language-none"><code class="language-none">package kim.bifrost.coldrain.partice
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">package</span> kim<span class="token punctuation">.</span>bifrost<span class="token punctuation">.</span>coldrain<span class="token punctuation">.</span>partice
 
-/**
+<span class="token comment">/**
  * kim.bifrost.coldrain.partice.Partice
  * Partice
  *
  * @author 寒雨
  * @since 2021/11/3 16:45
- **/
-fun main() {
-    test()
-}
+ **/</span>
+<span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-fun test() {
-    // 获取上一级调用者
-    val info = Throwable().stackTrace.run {
-        get(size - 2)
-    }
-    println("class: ${info.className} method: ${info.methodName}")
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取上一级调用者</span>
+    <span class="token keyword">val</span> info <span class="token operator">=</span> <span class="token function">Throwable</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>stackTrace<span class="token punctuation">.</span><span class="token function">run</span> <span class="token punctuation">{</span>
+        <span class="token keyword">get</span><span class="token punctuation">(</span>size <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"class: <span class="token interpolation"><span class="token delimiter variable">${</span>info<span class="token punctuation">.</span>className<span class="token delimiter variable">}</span></span> method: <span class="token interpolation"><span class="token delimiter variable">${</span>info<span class="token punctuation">.</span>methodName<span class="token delimiter variable">}</span></span>"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>编译后运行结果为</p>
 <pre class="line-numbers language-none"><code class="language-none">class: kim.bifrost.coldrain.partice.ParticeKt method: main<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
@@ -542,12 +542,12 @@ fun test() {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kotlin/">
-                                    <span class="chip bg-color">Kotlin</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Kotlin/">
+                                    <span class="chip bg-color">Kotlin</span>
                                 </a>
                             
                         </div>
@@ -863,31 +863,31 @@ fun test() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/11/06/observe-pattern-and-android/">
+                <a href="/2021/11/07/try-javassist/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记观察者模式(Observer Pattern) &amp; Android LifeCycle">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="初试Javassist">
                         
-                        <span class="card-title">记观察者模式(Observer Pattern) &amp; Android LifeCycle</span>
+                        <span class="card-title">初试Javassist</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要还是谈谈观察者模式
+                            列举了几种基本的javassist用法
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-07
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                    杂谈
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
@@ -897,16 +897,16 @@ fun test() {
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                     <a href="/tags/Kotlin/">
                         <span class="chip bg-color">Kotlin</span>
                     </a>
                     
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
+                        <span class="chip bg-color">外部库</span>
                     </a>
                     
                 </div>
@@ -920,24 +920,24 @@ fun test() {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/10/31/some-tips/">
+                <a href="/2021/10/28/git-commit-rule/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="整理一下今天踩的坑">
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Git Commit 规范">
                         
-                        <span class="card-title">整理一下今天踩的坑</span>
+                        <span class="card-title">Git Commit 规范</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            整理了一些在bukkit开发中经常碰到的坑
+                            git commit规范
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-10-28
                             </span>
                         <span class="publish-author">
                             
@@ -954,16 +954,8 @@ fun test() {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/">
-                        <span class="chip bg-color">Kotlin</span>
-                    </a>
-                    
-                    <a href="/tags/Coroutine/">
-                        <span class="chip bg-color">Coroutine</span>
-                    </a>
-                    
-                    <a href="/tags/Bukkit/">
-                        <span class="chip bg-color">Bukkit</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
@@ -1113,7 +1105,7 @@ fun test() {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.6k</span>
+                        class="white-color">43.7k</span>
             
             
             

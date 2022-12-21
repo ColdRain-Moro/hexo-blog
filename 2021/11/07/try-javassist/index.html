@@ -369,12 +369,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/">
-                                <span class="chip bg-color">Kotlin</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Kotlin/">
+                                <span class="chip bg-color">Kotlin</span>
                             </a>
                         
                             <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
@@ -409,7 +409,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-24
+                    2022-12-21
                 </div>
                 
 
@@ -449,43 +449,43 @@
                 <p>今天看见群友做了个很有意思的东西: 拦截插件的setOp方法，彻底干掉后门插件</p>
 <p>经过一番交谈之后，我得知这是利用Javassist做的，利用javassist将setop方法的内容替换便可实现。之前也在b站看到过有大佬用javassist利用Integer装箱的特性整病毒注入的骚操作…于是我surf the internet，了解了一下这个库的用法，发现它与asm库的作用不是一般的相似。但它不同于asm库的是它的可操作空间是没有asm库大的，但它的操作会简单许多。我们甚至不需要了解字节码便能使用javassist实现一些修改字节码的功能。</p>
 <p>实验代码</p>
-<pre class="line-numbers language-none"><code class="language-none">fun main() {
-    javassistEdit()
-}
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">fun</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">javassistEdit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-fun javassistEdit() {
-    // 获取ctClass,因为是Kotlin文件所以带有Kt后缀
-    val ctClass = ClassPool.getDefault().get("kim.bifrost.coldrain.partice.TestClass")
-    // 从ctClass获取方法
-    val ctMethod = ctClass.getDeclaredMethod("test")
-    // 直接修改方法体
-    ctMethod.setBody("{ System.out.println(\"修改过后的内容\"); }")
-    // 在方法起始行插入代码
-    ctMethod.insertBefore("""
+<span class="token keyword">fun</span> <span class="token function">javassistEdit</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取ctClass,因为是Kotlin文件所以带有Kt后缀</span>
+    <span class="token keyword">val</span> ctClass <span class="token operator">=</span> ClassPool<span class="token punctuation">.</span><span class="token function">getDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"kim.bifrost.coldrain.partice.TestClass"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 从ctClass获取方法</span>
+    <span class="token keyword">val</span> ctMethod <span class="token operator">=</span> ctClass<span class="token punctuation">.</span><span class="token function">getDeclaredMethod</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 直接修改方法体</span>
+    ctMethod<span class="token punctuation">.</span><span class="token function">setBody</span><span class="token punctuation">(</span><span class="token string">"{ System.out.println(\"修改过后的内容\"); }"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 在方法起始行插入代码</span>
+    ctMethod<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span><span class="token raw-string string">"""
         System.out.println("第一行");
-        """)
-    // 在方法最后一行插入代码
-    ctMethod.insertAfter("""
+        """</span><span class="token punctuation">)</span>
+    <span class="token comment">// 在方法最后一行插入代码</span>
+    ctMethod<span class="token punctuation">.</span><span class="token function">insertAfter</span><span class="token punctuation">(</span><span class="token raw-string string">"""
         System.out.println("最后一行");
-        """)
-    // 通过cflow检查是否为递归调用
-    ctMethod.useCflow("test")
-    // 若不为递归调用则打印test
-    ctMethod.insertBefore("if ($"+ "cflow(test) == 0)" +
-            " System.out.println(\"test \");")
-    // 将newInstance获得的实例直接cast成接口,避免反射带来的开销
-    (ctClass.toClass().newInstance() as TestInterface).test()
-}
+        """</span><span class="token punctuation">)</span>
+    <span class="token comment">// 通过cflow检查是否为递归调用</span>
+    ctMethod<span class="token punctuation">.</span><span class="token function">useCflow</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 若不为递归调用则打印test</span>
+    ctMethod<span class="token punctuation">.</span><span class="token function">insertBefore</span><span class="token punctuation">(</span><span class="token string">"if ($"</span><span class="token operator">+</span> <span class="token string">"cflow(test) == 0)"</span> <span class="token operator">+</span>
+            <span class="token string">" System.out.println(\"test \");"</span><span class="token punctuation">)</span>
+    <span class="token comment">// 将newInstance获得的实例直接cast成接口,避免反射带来的开销</span>
+    <span class="token punctuation">(</span>ctClass<span class="token punctuation">.</span><span class="token function">toClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">newInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> TestInterface<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
 
-class TestClass : TestInterface {
-    override fun test() {
-        println("测试内容1")
-    }
-}
+<span class="token keyword">class</span> TestClass <span class="token operator">:</span> TestInterface <span class="token punctuation">{</span>
+    <span class="token keyword">override</span> <span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"测试内容1"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-interface TestInterface {
-    fun test()
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">interface</span> TestInterface <span class="token punctuation">{</span>
+    <span class="token keyword">fun</span> <span class="token function">test</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>输出结果:</p>
 <pre class="line-numbers language-none"><code class="language-none">test 
@@ -560,12 +560,12 @@ interface TestInterface {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kotlin/">
-                                    <span class="chip bg-color">Kotlin</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Kotlin/">
+                                    <span class="chip bg-color">Kotlin</span>
                                 </a>
                             
                                 <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
@@ -926,31 +926,31 @@ interface TestInterface {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/06/observe-pattern-and-android/">
+                <a href="/2021/11/03/get-stacktrace-method-path/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="记观察者模式(Observer Pattern) &amp; Android LifeCycle">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java/kotlin 方法中获得调用方的类与方法名">
                         
-                        <span class="card-title">记观察者模式(Observer Pattern) &amp; Android LifeCycle</span>
+                        <span class="card-title">java/kotlin 方法中获得调用方的类与方法名</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            主要还是谈谈观察者模式
+                            整理了java/kotlin 方法中获得调用方的类与方法名的方式
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-03
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                    杂谈
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
                                 </a>
                             
                             
@@ -960,16 +960,12 @@ interface TestInterface {
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                     <a href="/tags/Kotlin/">
                         <span class="chip bg-color">Kotlin</span>
-                    </a>
-                    
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">
-                        <span class="chip bg-color">设计模式</span>
                     </a>
                     
                 </div>
@@ -1119,7 +1115,7 @@ interface TestInterface {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.6k</span>
+                        class="white-color">43.7k</span>
             
             
             

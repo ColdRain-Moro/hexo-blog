@@ -409,7 +409,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-24
+                    2022-12-21
                 </div>
                 
 
@@ -447,19 +447,19 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>故事起因大概是这样的…<br>昨天我需要做一个拦截本插件以外所有Actionbar信息的功能<br>最开始我自然而然的想到了监听<strong>PacketPlayOutChat</strong>数据包，通过判断它的内容是否符合条件来辨别这个Actionbar是否为我插件发送的Actionbar信息<br><strong>但这样实在是太low了</strong>，我不喜欢利用其发送的文本内容进行判断。就像做GUI，比起判断GUI的title，当然是判断InventoryHolder的做法更好。<br>于是我转向研究能否给这个数据包本身加上一个标记，进而方便我们辨识这个数据包<br>于是我想到了让一个类继承PacketPlayOutChat，用这个类来发包的办法<br>并且利用Taboolib的<strong>ASMVersionControl</strong>，还可以实现这个对这个类的版本控制<br>只需要对监听到的数据包的类进行判断，便可以轻易辨别<br>当时我想到的时候感觉自己真是牛逼坏了<br>大致做法如下<br><strong>继承PacketPlayOutChat</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">class LegalActionBarPacket(iChatBaseComponent: IChatBaseComponent, chatMessageType: ChatMessageType, uuid: UUID) : PacketPlayOutChat(iChatBaseComponent,chatMessageType,uuid)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">class</span> <span class="token function">LegalActionBarPacket</span><span class="token punctuation">(</span>iChatBaseComponent<span class="token operator">:</span> IChatBaseComponent<span class="token punctuation">,</span> chatMessageType<span class="token operator">:</span> ChatMessageType<span class="token punctuation">,</span> uuid<span class="token operator">:</span> UUID<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">PacketPlayOutChat</span><span class="token punctuation">(</span>iChatBaseComponent<span class="token punctuation">,</span>chatMessageType<span class="token punctuation">,</span>uuid<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>ASMVersionControl</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">val legalPacketClass = AsmVersionControl.createNMS("me.asgard.coldrain.hud.module.nms.LegalActionBarPacket").mapping().translate(SacredHUD.plugin) <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">val</span> legalPacketClass <span class="token operator">=</span> AsmVersionControl<span class="token punctuation">.</span><span class="token function">createNMS</span><span class="token punctuation">(</span><span class="token string">"me.asgard.coldrain.hud.module.nms.LegalActionBarPacket"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mapping</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">translate</span><span class="token punctuation">(</span>SacredHUD<span class="token punctuation">.</span>plugin<span class="token punctuation">)</span> <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p><strong>数据包监听</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">@TPacket(type = TPacket.Type.SEND)
-private fun send(player: Player, packet: Packet): Boolean {
-    if (packet.equals("PacketPlayOutChat")
-            &amp;&amp; packet.read("b").reflex&lt;Byte&gt;("d") == 2.toByte()
-            &amp;&amp; packet.get().javaClass != legalPacketClass){
-        return false
-    }
-    return true
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token annotation builtin">@TPacket</span><span class="token punctuation">(</span>type <span class="token operator">=</span> TPacket<span class="token punctuation">.</span>Type<span class="token punctuation">.</span>SEND<span class="token punctuation">)</span>
+<span class="token keyword">private</span> <span class="token keyword">fun</span> <span class="token function">send</span><span class="token punctuation">(</span>player<span class="token operator">:</span> Player<span class="token punctuation">,</span> packet<span class="token operator">:</span> Packet<span class="token punctuation">)</span><span class="token operator">:</span> Boolean <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>packet<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"PacketPlayOutChat"</span><span class="token punctuation">)</span>
+            <span class="token operator">&amp;&amp;</span> packet<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token string">"b"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reflex<span class="token operator">&lt;</span>Byte<span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token string">"d"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token function">toByte</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token operator">&amp;&amp;</span> packet<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>javaClass <span class="token operator">!=</span> legalPacketClass<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然后我洋洋得意的编译出来扔进服务器里，对自己发了一个legalPacket<br>可笑的是，这个我取名的legalPacket，被服务端认为是一个ilegal packet，我直接掉线</p>
 
@@ -885,12 +885,12 @@ private fun send(player: Player, packet: Packet): Boolean {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/">
-                        <span class="chip bg-color">Kotlin</span>
-                    </a>
-                    
                     <a href="/tags/Java/">
                         <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Kotlin/">
+                        <span class="chip bg-color">Kotlin</span>
                     </a>
                     
                     <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
@@ -1102,7 +1102,7 @@ private fun send(player: Player, packet: Packet): Boolean {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.6k</span>
+                        class="white-color">43.7k</span>
             
             
             

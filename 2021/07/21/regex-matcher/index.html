@@ -369,12 +369,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/">
-                                <span class="chip bg-color">Kotlin</span>
-                            </a>
-                        
                             <a href="/tags/Java/">
                                 <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Kotlin/">
+                                <span class="chip bg-color">Kotlin</span>
                             </a>
                         
                     </div>
@@ -405,7 +405,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-24
+                    2022-12-21
                 </div>
                 
 
@@ -443,14 +443,14 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="传统方式：使用捕获组序数来获取捕获组捕获到的内容"><a href="#传统方式：使用捕获组序数来获取捕获组捕获到的内容" class="headerlink" title="传统方式：使用捕获组序数来获取捕获组捕获到的内容"></a>传统方式：使用捕获组序数来获取捕获组捕获到的内容</h2><p>上代码</p>
-<pre class="line-numbers language-none"><code class="language-none">val pattern = Pattern.compile("(//d+)(//S+)")
-val matcher = pattern.matcher("2021BifrostCraft")
-if (matcher.find()) {
-    print(matcher.group())
-    print(matcher.group(1))
-    print(matcher.group(2))
-}
-// 输出结果是:2021BifrostCraft,2021,BifrostCraft<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-kotlin" data-language="kotlin"><code class="language-kotlin"><span class="token keyword">val</span> pattern <span class="token operator">=</span> Pattern<span class="token punctuation">.</span><span class="token function">compile</span><span class="token punctuation">(</span><span class="token string">"(//d+)(//S+)"</span><span class="token punctuation">)</span>
+<span class="token keyword">val</span> matcher <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">matcher</span><span class="token punctuation">(</span><span class="token string">"2021BifrostCraft"</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token function">print</span><span class="token punctuation">(</span>matcher<span class="token punctuation">.</span><span class="token function">group</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 输出结果是:2021BifrostCraft,2021,BifrostCraft</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>但有时我们不知道Pattern中一共有多少个捕获组，也就不知道我们需要获取的捕获组的序号</p>
 <p>这个问题一度困扰了我很久</p>
@@ -531,12 +531,12 @@ if (matcher.find()) {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Kotlin/">
-                                    <span class="chip bg-color">Kotlin</span>
-                                </a>
-                            
                                 <a href="/tags/Java/">
                                     <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/Kotlin/">
+                                    <span class="chip bg-color">Kotlin</span>
                                 </a>
                             
                         </div>
@@ -901,24 +901,24 @@ if (matcher.find()) {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/21/use-stream-to-handle-map/">
+                <a href="/2021/07/20/how-to-serialize/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="使用stream对map进行操作">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="序列化的两种常见做法">
                         
-                        <span class="card-title">使用stream对map进行操作</span>
+                        <span class="card-title">序列化的两种常见做法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用java stream api快捷的对map进行一些繁琐的操作
+                            记录下Java/Kotlin序列化对象的两种做法
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-20
                             </span>
                         <span class="publish-author">
                             
@@ -935,12 +935,16 @@ if (matcher.find()) {
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
                     <a href="/tags/Kotlin/">
                         <span class="chip bg-color">Kotlin</span>
                     </a>
                     
-                    <a href="/tags/Java/">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/%E5%A4%96%E9%83%A8%E5%BA%93/">
+                        <span class="chip bg-color">外部库</span>
                     </a>
                     
                 </div>
@@ -1090,7 +1094,7 @@ if (matcher.find()) {
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">49.6k</span>
+                        class="white-color">43.7k</span>
             
             
             
