@@ -4,10 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022年度总结, ColdRain&#39;s Blog">
-    <meta name="description" content="2022年度总结
-持续了三年的疫情防控政策最后竟以这样一种闹剧般的方式结束了。大家让渡了三年的自由光阴，最后换来了一场空，结果大家还是难逃感染新冠的诡运。这三年，我看见了太多，思想也变了太多。
-最后还是难逃感染的诡运，摆烂的大环境下我无法独">
+    <meta name="keywords" content="解决某些linux程序缺少动态链接库的问题, ColdRain&#39;s Blog">
+    <meta name="description" content="解决某些linux程序缺少动态链接库的问题
+记录一下解决gdb依赖问题的过程
+
+今天突然想琢磨琢磨gdb，但发现 gdb 缺少动态链接库libunistring.so.5的依赖。
+
+然后我又脑残了，更新了 libunistring。
+
+ya">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022年度总结 | ColdRain&#39;s Blog</title>
+    <title>解决某些linux程序缺少动态链接库的问题 | ColdRain&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -250,12 +255,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022年度总结</h1>
+                    <h1 class="description center-align post-title">解决某些linux程序缺少动态链接库的问题</h1>
                 </div>
             </div>
         </div>
@@ -371,8 +376,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">年度总结</span>
+                            <a href="/tags/linux/">
+                                <span class="chip bg-color">linux</span>
                             </a>
                         
                     </div>
@@ -383,8 +388,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                杂谈
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -396,21 +401,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-21
+                    2022-12-27
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-21
+                    2022-12-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    520
+                    262
                 </div>
                 
 
@@ -440,12 +445,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="2022年度总结"><a href="#2022年度总结" class="headerlink" title="2022年度总结"></a>2022年度总结</h1><blockquote>
-<p>持续了三年的疫情防控政策最后竟以这样一种闹剧般的方式结束了。大家让渡了三年的自由光阴，最后换来了一场空，结果大家还是难逃感染新冠的诡运。这三年，我看见了太多，思想也变了太多。</p>
-<p>最后还是难逃感染的诡运，摆烂的大环境下我无法独善其身。“能染则染，应染尽染”</p>
-<p>如此荒谬的政策竟然还有这么多人为之洗地，他们甚至拿不出自己的论据，说不过了就又搬出美国 ”你以为美国就能好到哪里去？“ ”美国死的人比我们多得多“ 真的是成为了完全不会独立思考的猪猡，我能容纳不同的观点不同的论调，但我不能容纳无理取闹。又想到了以后进入社会要为房子车子孩子给自己带上镣铐，成为一个血肉铸成的劳动机器，我就感觉未来黯淡无光，留在这个国家没有未来，只有精神和肉体的双重奴役。</p>
-<p>我累了，已经不觉得自己能改变这片土地上的苦痛哪怕一分一毫了，但我还有机会改变自己的命运。小时候父母问我未来想不想出国，我当时说我觉得中国挺好的。现在想来真是笑话，那时候我明明什么都不懂，什么负担都没有，仅仅因为热爱我土生土长的这片土地便说出了这样的话。是啊，我热爱我土生土长的这片土地，也爱着我在这片土地上邂逅的人，但即便热爱，即便难以割舍，我依然做出了决断。为什么中国每年润出去这么多人，他们难道真的一点故土情节都没有吗？我想应该多少都是有的。是什么样的苦难使他们克服了故土情节，以前我不懂。</p>
+                <h1 id="解决某些linux程序缺少动态链接库的问题"><a href="#解决某些linux程序缺少动态链接库的问题" class="headerlink" title="解决某些linux程序缺少动态链接库的问题"></a>解决某些linux程序缺少动态链接库的问题</h1><blockquote>
+<p>记录一下解决<code>gdb</code>依赖问题的过程</p>
 </blockquote>
+<p>今天突然想琢磨琢磨<code>gdb</code>，但发现 gdb 缺少动态链接库<code>libunistring.so.5</code>的依赖。</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173436085.png" alt="image-20221227173436085"></p>
+<p>然后我又脑残了，更新了 libunistring。</p>
+<blockquote>
+<p>yay -S libunistring</p>
+</blockquote>
+<p>这一更果然出事了，直接连 pacman 和 vscode 都没法用了，但之前好歹经历过类似的事情，知道可以给这个包降级</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173025853.png" alt="image-20221227173025853"></p>
+<p>去 <a target="_blank" rel="noopener" href="https://archive.archlinux.org/">https://archive.archlinux.org</a> 找到了老版本的软件包，用之前搞到的 <code>pacman-static </code> 执行了降级操作，这样就完成了版本的降级</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173237073.png" alt="image-20221227173237073"></p>
+<p>虽说解决了自己手残弄出来的滚挂，但是 gdb 还是不能用。先用<code>lddtree</code>看看缺少哪些依赖</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173624732.png" alt="image-20221227173624732"></p>
+<p>看来只缺 <code>libunistring.so.5</code> 。于是到 <code>usr/lib</code> 目录下面看了一下 只找到了 <code>libunistring.so.2</code> 和 <code>libunistring.so.2.2.0</code></p>
+<p>于是突发奇想，干脆 <code>ln</code> 一下 <code>libunistring.2.2.0.so</code>，看看能不能用？</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173857960.png" alt="image-20221227173857960"></p>
+<p>成功解决，看来这些依赖只有名字上的区别。</p>
 
                 
             </div>
@@ -472,7 +490,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.coldrain.ink/2022/12/21/2022/">http://blog.coldrain.ink/2022/12/21/2022/</a>
+                    <a href="http://blog.coldrain.ink/2022/12/27/just-ln/">http://blog.coldrain.ink/2022/12/27/just-ln/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -510,8 +528,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">年度总结</span>
+                                <a href="/tags/linux/">
+                                    <span class="chip bg-color">linux</span>
                                 </a>
                             
                         </div>
@@ -828,7 +846,57 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/12/21/2022/">
+                <a href="/2022/12/27/just-ln/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="解决某些linux程序缺少动态链接库的问题">
+                        
+                        <span class="card-title">解决某些linux程序缺少动态链接库的问题</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/12/20/2022/">
                     <div class="card-image">
                         
                         
@@ -845,7 +913,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
                             </span>
                         <span class="publish-author">
                             
@@ -859,61 +927,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
                     <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
                         <span class="chip bg-color">年度总结</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/12/21/idea-terminal-proxy/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="给Idea的Terminal设置代理">
-                        
-                        <span class="card-title">给Idea的Terminal设置代理</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-21
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Idea/">
-                        <span class="chip bg-color">Idea</span>
                     </a>
                     
                 </div>
@@ -1063,7 +1081,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.7k</span>
+                        class="white-color">43.9k</span>
             
             
             

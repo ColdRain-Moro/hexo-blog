@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="算法笔记, ColdRain&#39;s Blog">
-    <meta name="description" content="算法笔记汇总处">
+    <meta name="keywords" content="给Idea的Terminal设置代理, ColdRain&#39;s Blog">
+    <meta name="description" content="给Idea的Terminal设置代理虽然idea有一个代理设置，但它基本上只作用于Plugin和Plugin Market，对于gradle或者cargo这种包管理工具并没有什么用，甚至对git也没有什么用（至少在我的linux机器上，直接">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>算法笔记 | ColdRain&#39;s Blog</title>
+    <title>给Idea的Terminal设置代理 | ColdRain&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -248,12 +248,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">算法笔记</h1>
+                    <h1 class="description center-align post-title">给Idea的Terminal设置代理</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">算法</span>
+                            <a href="/tags/Idea/">
+                                <span class="chip bg-color">Idea</span>
                             </a>
                         
                     </div>
@@ -394,7 +394,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-09-30
+                    2022-12-20
                 </div>
                 
 
@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    319
+                    241
                 </div>
                 
 
@@ -438,41 +438,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="算法笔记"><a href="#算法笔记" class="headerlink" title="算法笔记"></a>算法笔记</h1><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>顾名思义就是维护两个指针，多说无益，看例题</p>
-<blockquote>
-<h4 id="剑指-Offer-22-链表中倒数第k个节点"><a href="#剑指-Offer-22-链表中倒数第k个节点" class="headerlink" title="剑指 Offer 22. 链表中倒数第k个节点"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/">剑指 Offer 22. 链表中倒数第k个节点</a></h4><p>输入一个链表，输出该链表中倒数第k个节点。为了符合大多数人的习惯，本题从1开始计数，即链表的尾节点是倒数第1个节点。</p>
-<p>例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。</p>
-<p>示例：</p>
-<blockquote>
-<p> 给定一个链表: 1-&gt;2-&gt;3-&gt;4-&gt;5, 和 k = 2.</p>
-<p>返回链表 4-&gt;5.</p>
-</blockquote>
-</blockquote>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */</span>
-<span class="token comment">/**
- * @param {ListNode} head
- * @param {number} k
- * @return {ListNode}
- */</span>
-<span class="token keyword">var</span> <span class="token function-variable function">getKthFromEnd</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">head<span class="token punctuation">,</span> k</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token keyword">let</span> <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> slow<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>head<span class="token punctuation">,</span> head<span class="token punctuation">]</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>fast <span class="token operator">&amp;&amp;</span> k <span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">,</span> k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">while</span> <span class="token punctuation">(</span>fast<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token punctuation">[</span>fast<span class="token punctuation">,</span> slow<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">,</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> slow
-<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>维护一快一慢两个指针，先将fast指针向前移动k+1位。再将fast与slow同步向前移动，直到fast指针抵达链表尾部空指针，然后返回slow指针。</p>
-<p>设指针长度len，首先fast指针向前移动了k+1位，故slow指针与fast一同移动的距离为len-(k+1)，即指向倒数第k个元素。</p>
+                <h1 id="给Idea的Terminal设置代理"><a href="#给Idea的Terminal设置代理" class="headerlink" title="给Idea的Terminal设置代理"></a>给Idea的Terminal设置代理</h1><p>虽然idea有一个代理设置，但它基本上只作用于Plugin和Plugin Market，对于gradle或者cargo这种包管理工具并没有什么用，甚至对git也没有什么用（至少在我的linux机器上，直接打开终端跑他们都是走代理的，但在idea上跑就是不走代理）。我忍这种情况已经很久了，但一直想不到解决方案。</p>
+<p>然后某天突然想到idea有个终端，难道这些任务其实是在idea的终端里面跑的吗？于是去试了下在idea的终端里跑命令，果然是不走代理的。</p>
+<p>那这问题不就解决了吗，直接找到idea终端环境变量的设置，把代理设置给配置上</p>
+<p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221221104523267.png" alt="image-20221221104523267"></p>
+<p>设置完了重启idea之后干啥都快，cargo一眨眼就跑完了，gradle也快了很多，感情我之前是一直没用上代理啊？</p>
 
                 
             </div>
@@ -499,7 +469,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.coldrain.ink/2022/09/30/algorithm-learning/">http://blog.coldrain.ink/2022/09/30/algorithm-learning/</a>
+                    <a href="http://blog.coldrain.ink/2022/12/20/idea-terminal-proxy/">http://blog.coldrain.ink/2022/12/20/idea-terminal-proxy/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -537,8 +507,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">算法</span>
+                                <a href="/tags/Idea/">
+                                    <span class="chip bg-color">Idea</span>
                                 </a>
                             
                         </div>
@@ -854,7 +824,56 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/23/do-not-scorlling-update-openssl/">
+                <a href="/2022/12/20/2022/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="2022年度总结">
+                        
+                        <span class="card-title">2022年度总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-20
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
+                                    杂谈
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
+                        <span class="chip bg-color">年度总结</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/22/do-not-scorlling-update-openssl/">
                     <div class="card-image">
                         
                         
@@ -870,9 +889,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -894,59 +913,6 @@
                     
                     <a href="/tags/arch-linux/">
                         <span class="chip bg-color">arch linux</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/09/01/framework-study/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Android framework层学习笔记">
-                        
-                        <span class="card-title">Android framework层学习笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-01
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Android/">
-                        <span class="chip bg-color">Android</span>
-                    </a>
-                    
-                    <a href="/tags/framework%E5%B1%82/">
-                        <span class="chip bg-color">framework层</span>
                     </a>
                     
                 </div>
@@ -1096,7 +1062,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">43.7k</span>
+                        class="white-color">43.9k</span>
             
             
             
