@@ -4,9 +4,34 @@
   
     
     <entry>
+      <title>2022年度总结</title>
+      <link href="/2023/01/01/2022/"/>
+      <url>/2023/01/01/2022/</url>
+      
+        <content type="html"><![CDATA[<h1 id="2022年度总结"><a href="#2022年度总结" class="headerlink" title="2022年度总结"></a>2022年度总结</h1><blockquote><p>从今年开始正儿八经的写年度总结</p></blockquote><p>之前其实有想过写一些话，但想想还是算了，只总结我个人技术上的进步</p><p>其实仔细想想，2022还是做了一些事的，但其实我不是很满意。OS，编译原理，计网，这些重要的东西都是浅尝则止，希望今年能在这些方面有所突破。2022年的后半年学的东西其实都离 android 开发比较远，不过我觉得这样也好，遵循自己的兴趣学点自己领域以外的新知识也挺好的。况且我学的知识并不是完全对我的未来没有帮助，毕竟我有个做 android 架构的长远目标。</p><h2 id="做了"><a href="#做了" class="headerlink" title="做了"></a>做了</h2><ul><li><p>成为了红岩网校的一名干事</p><blockquote><p>明明去年学长带我的时候都历历在目，今年居然轮到我来带学弟学妹了，这感觉真是奇妙</p></blockquote></li><li><p>rust 入门</p><blockquote><p>应该算入门了吧（？）</p></blockquote></li><li><p>成为 linux 用户</p><blockquote><p>主力系统已经换成了 Manjaro Linux 用了半年了，虽说滚挂了好几次，但用起来很舒服</p><p>现在 Linux 的基本操作也算比较熟悉了</p></blockquote></li><li><p>给自己的小米11 root 了，玩起了 Hook</p><blockquote><p>安卓开发者怎么能没有一台 root 过的手机 （</p></blockquote></li><li><p>学了点前端（但不多）</p><blockquote><p>会点前端还是很不错的，前端的技术确实方便整活</p></blockquote></li><li><p>Kotlin 协程源码解析</p><blockquote><p>站在蔷神的肩膀上（</p><p>顺便简单分析了js的 async await，异步编程这一块应该算吃透了</p></blockquote></li><li><p>NIO 原理 / Netty 学习</p><blockquote><p>NIO 结果弄了半天是靠系统内核支持的多路复用，实际上 java 层的源码也没什么非常巧妙的地方</p><p>Netty 确实是个不错的网络框架</p></blockquote></li><li><p>浅学了 KSP (Kotlin Symbol Processor) ， KCP (Kotlin Compiler Plugin)</p><blockquote><p>确实对这种编译期的东西比较感兴趣</p><p>之后学了编译原理再深入研究</p></blockquote></li><li><p>etc.</p></li></ul><h2 id="没做到的"><a href="#没做到的" class="headerlink" title="没做到的"></a>没做到的</h2><ul><li><p>学 OS</p><blockquote><p>在学，不过学着有点吃力，今年学不完了</p></blockquote></li><li><p>学编译原理 / 看 Javac 源码</p><blockquote><p>年末了才开始，决定先把这个学了再继续 OS</p></blockquote></li><li><p>学计网</p><blockquote><p>这个是真的一点没学，不过现在事情确实有点多，计网就先搁一搁吧</p></blockquote></li><li><p>写个树洞</p><blockquote><p>后端其实已经写好了，不过我其实想构思一个去中心化的分布式树洞，但一直没想出来该怎么改</p><p>android 端和前端的进度就暂时搁置了 （咕咕咕）</p></blockquote></li><li><p>学 Flutter</p><blockquote><p>说实话不是很感兴趣了，现在比较想学 native 的东西</p><p>抱歉，在想 rust 的事</p></blockquote></li><li><p>学 Gradle</p><blockquote><p>好吧，其实我还是有点好高骛远了。Gradle 其实才是我现阶段应该琢磨的东西，但我没琢磨多少就去冲 OS 了。</p></blockquote></li></ul><h2 id="2023的野望"><a href="#2023的野望" class="headerlink" title="2023的野望"></a>2023的野望</h2><ul><li><p>学完老三样 编译原理/OS/计网</p><blockquote><p>不说学透吧，至少大致要了解，并且能在实践中活用</p></blockquote></li><li><p>琢磨 Android NDK 开发</p><blockquote><p>既然学了 OS，那就顺便把 NDK 也一起学了吧</p></blockquote></li><li><p>刷 Arch Linux</p><blockquote><p>这个其实早就可以着手开始刷了，但重装了系统配乱七八遭的东西还挺麻烦的，但今年一定要抽时间做了</p></blockquote></li><li><p>刷 LineageOS</p><blockquote><p>其实继续 MIUI 也没什么，但不觉得类原生很酷很 Geek 吗，很符合我对 android 开发者的幻想</p></blockquote></li><li><p>学 LearningOS ，用 rust 搓一个系统</p><blockquote><p>这太酷了，很符合我对 OS 开发者的幻想</p></blockquote></li><li><p>深入学 Rust</p><blockquote><p>Rust 太深奥了，我需要在语言层面上投入更多</p></blockquote></li><li><p>学 Gradle</p><blockquote><p>其实我觉得对于 android 开发来说，会 Gradle 足以让你成为团队的核心</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂谈 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 年度总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>解决某些linux程序缺少动态链接库的问题</title>
-      <link href="/2022/12/27/just-ln/"/>
-      <url>/2022/12/27/just-ln/</url>
+      <link href="/2022/12/26/just-ln/"/>
+      <url>/2022/12/26/just-ln/</url>
       
         <content type="html"><![CDATA[<h1 id="解决某些linux程序缺少动态链接库的问题"><a href="#解决某些linux程序缺少动态链接库的问题" class="headerlink" title="解决某些linux程序缺少动态链接库的问题"></a>解决某些linux程序缺少动态链接库的问题</h1><blockquote><p>记录一下解决<code>gdb</code>依赖问题的过程</p></blockquote><p>今天突然想琢磨琢磨<code>gdb</code>，但发现 gdb 缺少动态链接库<code>libunistring.so.5</code>的依赖。</p><p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173436085.png" alt="image-20221227173436085"></p><p>然后我又脑残了，更新了 libunistring。</p><blockquote><p>yay -S libunistring</p></blockquote><p>这一更果然出事了，直接连 pacman 和 vscode 都没法用了，但之前好歹经历过类似的事情，知道可以给这个包降级</p><p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173025853.png" alt="image-20221227173025853"></p><p>去 <a href="https://archive.archlinux.org/">https://archive.archlinux.org</a> 找到了老版本的软件包，用之前搞到的 <code>pacman-static </code> 执行了降级操作，这样就完成了版本的降级</p><p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173237073.png" alt="image-20221227173237073"></p><p>虽说解决了自己手残弄出来的滚挂，但是 gdb 还是不能用。先用<code>lddtree</code>看看缺少哪些依赖</p><p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173624732.png" alt="image-20221227173624732"></p><p>看来只缺 <code>libunistring.so.5</code> 。于是到 <code>usr/lib</code> 目录下面看了一下 只找到了 <code>libunistring.so.2</code> 和 <code>libunistring.so.2.2.0</code></p><p>于是突发奇想，干脆 <code>ln</code> 一下 <code>libunistring.2.2.0.so</code>，看看能不能用？</p><p><img src="https://persecution-1301196908.cos.ap-chongqing.myqcloud.com/image_bed/image-20221227173857960.png" alt="image-20221227173857960"></p><p>成功解决，看来这些依赖只有名字上的区别。</p>]]></content>
       
@@ -21,31 +46,6 @@
         <tags>
             
             <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>2022年度总结</title>
-      <link href="/2022/12/20/2022/"/>
-      <url>/2022/12/20/2022/</url>
-      
-        <content type="html"><![CDATA[<h1 id="2022年度总结"><a href="#2022年度总结" class="headerlink" title="2022年度总结"></a>2022年度总结</h1><blockquote><p>持续了三年的疫情防控政策最后竟以这样一种闹剧般的方式结束了。大家让渡了三年的自由光阴，最后换来了一场空，结果大家还是难逃感染新冠的诡运。这三年，我看见了太多，思想也变了太多。</p><p>最后还是难逃感染的诡运，摆烂的大环境下我无法独善其身。“能染则染，应染尽染”</p><p>如此荒谬的政策竟然还有这么多人为之洗地，他们甚至拿不出自己的论据，说不过了就又搬出美国 ”你以为美国就能好到哪里去？“ ”美国死的人比我们多得多“ 真的是成为了完全不会独立思考的猪猡，我能容纳不同的观点不同的论调，但我不能容纳无理取闹。又想到了以后进入社会要为房子车子孩子给自己带上镣铐，成为一个血肉铸成的劳动机器，我就感觉未来黯淡无光，留在这个国家没有未来，只有精神和肉体的双重奴役。</p><p>我累了，已经不觉得自己能改变这片土地上的苦痛哪怕一分一毫了，但我还有机会改变自己的命运。小时候父母问我未来想不想出国，我当时说我觉得中国挺好的。现在想来真是笑话，那时候我明明什么都不懂，什么负担都没有，仅仅因为热爱我土生土长的这片土地便说出了这样的话。是啊，我热爱我土生土长的这片土地，也爱着我在这片土地上邂逅的人，但即便热爱，即便难以割舍，我依然做出了决断。为什么中国每年润出去这么多人，他们难道真的一点故土情节都没有吗？我想应该多少都是有的。是什么样的苦难使他们克服了故土情节，以前我不懂。</p></blockquote>]]></content>
-      
-      
-      <categories>
-          
-          <category> 杂谈 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 年度总结 </tag>
             
         </tags>
       
