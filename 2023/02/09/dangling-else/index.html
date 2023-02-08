@@ -4,12 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="2022年度总结, ColdRain&#39;s Blog">
-    <meta name="description" content="2022年度总结
-从今年开始正儿八经的写年度总结
-
-之前其实有想过写一些话，但想想还是算了，只总结我个人技术上的进步
-其实仔细想想，2022还是做了一些事的，但其实我不是很满意。OS，编译原理，计网，这些重要的东西都是浅尝则止，希望今年能在">
+    <meta name="keywords" content="Dangling else (悬空else), ColdRain&#39;s Blog">
+    <meta name="description" content="试过在网上找一些文章，发现全是答辩。最后翻了翻龙书就差不多看懂了，在这里谈谈我的理解，顺便水篇博文:D
+什么是 Dangling else算是一个经典的上下文无关文法产生二义性的问题。
+stmt -&amp;gt; &#34;if&#34; expr &#34;then&#34;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +19,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>2022年度总结 | ColdRain&#39;s Blog</title>
+    <title>Dangling else (悬空else) | ColdRain&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -252,12 +250,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">2022年度总结</h1>
+                    <h1 class="description center-align post-title">Dangling else (悬空else)</h1>
                 </div>
             </div>
         </div>
@@ -373,8 +371,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
-                                <span class="chip bg-color">年度总结</span>
+                            <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">编译原理</span>
                             </a>
                         
                     </div>
@@ -385,8 +383,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%9D%82%E8%B0%88/" class="post-category">
-                                杂谈
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -398,7 +396,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-01
+                    2023-02-09
                 </div>
                 
 
@@ -412,14 +410,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    933
+                    552
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -442,130 +440,40 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="2022年度总结"><a href="#2022年度总结" class="headerlink" title="2022年度总结"></a>2022年度总结</h1><blockquote>
-<p>从今年开始正儿八经的写年度总结</p>
-</blockquote>
-<p>之前其实有想过写一些话，但想想还是算了，只总结我个人技术上的进步</p>
-<p>其实仔细想想，2022还是做了一些事的，但其实我不是很满意。OS，编译原理，计网，这些重要的东西都是浅尝则止，希望今年能在这些方面有所突破。2022年的后半年学的东西其实都离 android 开发比较远，不过我觉得这样也好，遵循自己的兴趣学点自己领域以外的新知识也挺好的。况且我学的知识并不是完全对我的未来没有帮助，毕竟我有个做 android 架构的长远目标。</p>
-<h2 id="做了"><a href="#做了" class="headerlink" title="做了"></a>做了</h2><ul>
-<li><p>成为了红岩网校的一名干事</p>
+                <p>试过在网上找一些文章，发现全是答辩。最后翻了翻龙书就差不多看懂了，在这里谈谈我的理解，顺便水篇博文:D</p>
+<h2 id="什么是-Dangling-else"><a href="#什么是-Dangling-else" class="headerlink" title="什么是 Dangling else"></a>什么是 Dangling else</h2><p>算是一个经典的上下文无关文法产生二义性的问题。</p>
+<pre class="line-numbers language-none"><code class="language-none">stmt -&gt; "if" expr "then" stmt
+	|	"if" expr "then" stmt "else" stmt
+	|	other<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>这是一个言简意骇的一个描述 if else 语句的文法，一眼就能看懂。但它到底能不能使用呢？答案是不能，因为这个文法产生了<strong>二义性</strong></p>
+<p>(同样的一段文字可能被解析为两种或更多不一样的AST)。</p>
+<p>举个例子</p>
+<pre class="line-numbers language-none"><code class="language-none">if E1 then if E2 then S2 else S3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这段代码可以被解析成</p>
+<pre class="line-numbers language-none"><code class="language-none">if E1 then (if E2 then S2) else S3<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>也可以被解析成</p>
+<pre class="line-numbers language-none"><code class="language-none">if E1 then (if E2 then S2 else S3)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>这样就在语法上产生了歧义，那肯定不行。</p>
+<p>这里我们发现这个 else 并没有一个确定匹配的 if，所以我们把这个问题称为 Dangling else ( 悬空 else )</p>
+<h2 id="怎么解决-Dangling-else"><a href="#怎么解决-Dangling-else" class="headerlink" title="怎么解决 Dangling else"></a>怎么解决 Dangling else</h2><p>一句话，改写。我们需要改写这个文法，让每个 else 都匹配上一个唯一的 if 。</p>
 <blockquote>
-<p>明明去年学长带我的时候都历历在目，今年居然轮到我来带学弟学妹了，这感觉真是奇妙</p>
+<p>基本思想是在一个 then 和一个 else 之间出现的语句必须是<strong>已匹配的</strong>。也就是说，中间的语句不能以一个尚未匹配的（或者说是开放的）then 结尾。一个已匹配的语句要么是一个不包含开放语句的 if-then-else 语句，要么是一个非条件语句。</p>
+<p>摘自龙书</p>
 </blockquote>
-</li>
-<li><p>rust 入门</p>
-<blockquote>
-<p>应该算入门了吧（？）</p>
-</blockquote>
-</li>
-<li><p>成为 linux 用户</p>
-<blockquote>
-<p>主力系统已经换成了 Manjaro Linux 用了半年了，虽说滚挂了好几次，但用起来很舒服</p>
-<p>现在 Linux 的基本操作也算比较熟悉了</p>
-</blockquote>
-</li>
-<li><p>给自己的小米11 root 了，玩起了 Hook</p>
-<blockquote>
-<p>安卓开发者怎么能没有一台 root 过的手机 （</p>
-</blockquote>
-</li>
-<li><p>学了点前端（但不多）</p>
-<blockquote>
-<p>会点前端还是很不错的，前端的技术确实方便整活</p>
-</blockquote>
-</li>
-<li><p>Kotlin 协程源码解析</p>
-<blockquote>
-<p>站在蔷神的肩膀上（</p>
-<p>顺便简单分析了js的 async await，异步编程这一块应该算吃透了</p>
-</blockquote>
-</li>
-<li><p>NIO 原理 / Netty 学习</p>
-<blockquote>
-<p>NIO 结果弄了半天是靠系统内核支持的多路复用，实际上 java 层的源码也没什么非常巧妙的地方</p>
-<p>Netty 确实是个不错的网络框架</p>
-</blockquote>
-</li>
-<li><p>浅学了 KSP (Kotlin Symbol Processor) ， KCP (Kotlin Compiler Plugin)</p>
-<blockquote>
-<p>确实对这种编译期的东西比较感兴趣</p>
-<p>之后学了编译原理再深入研究</p>
-</blockquote>
-</li>
-<li><p>etc.</p>
-</li>
-</ul>
-<h2 id="没做到的"><a href="#没做到的" class="headerlink" title="没做到的"></a>没做到的</h2><ul>
-<li><p>学 OS</p>
-<blockquote>
-<p>在学，不过学着有点吃力，今年学不完了</p>
-</blockquote>
-</li>
-<li><p>学编译原理 / 看 Javac 源码</p>
-<blockquote>
-<p>年末了才开始，决定先把这个学了再继续 OS</p>
-</blockquote>
-</li>
-<li><p>学计网</p>
-<blockquote>
-<p>这个是真的一点没学，不过现在事情确实有点多，计网就先搁一搁吧</p>
-</blockquote>
-</li>
-<li><p>写个树洞</p>
-<blockquote>
-<p>后端其实已经写好了，不过我其实想构思一个去中心化的分布式树洞，但一直没想出来该怎么改</p>
-<p>android 端和前端的进度就暂时搁置了 （咕咕咕）</p>
-</blockquote>
-</li>
-<li><p>学 Flutter</p>
-<blockquote>
-<p>说实话不是很感兴趣了，现在比较想学 native 的东西</p>
-<p>抱歉，在想 rust 的事</p>
-</blockquote>
-</li>
-<li><p>学 Gradle</p>
-<blockquote>
-<p>好吧，其实我还是有点好高骛远了。Gradle 其实才是我现阶段应该琢磨的东西，但我没琢磨多少就去冲 OS 了。</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="2023的野望"><a href="#2023的野望" class="headerlink" title="2023的野望"></a>2023的野望</h2><ul>
-<li><p>学完老三样 编译原理/OS/计网</p>
-<blockquote>
-<p>不说学透吧，至少大致要了解，并且能在实践中活用</p>
-</blockquote>
-</li>
-<li><p>琢磨 Android NDK 开发</p>
-<blockquote>
-<p>既然学了 OS，那就顺便把 NDK 也一起学了吧</p>
-</blockquote>
-</li>
-<li><p>刷 Arch Linux</p>
-<blockquote>
-<p>这个其实早就可以着手开始刷了，但重装了系统配乱七八遭的东西还挺麻烦的，但今年一定要抽时间做了</p>
-</blockquote>
-</li>
-<li><p>刷 LineageOS</p>
-<blockquote>
-<p>其实继续 MIUI 也没什么，但不觉得类原生很酷很 Geek 吗，很符合我对 android 开发者的幻想</p>
-</blockquote>
-</li>
-<li><p>学 LearningOS ，用 rust 搓一个系统</p>
-<blockquote>
-<p>这太酷了，很符合我对 OS 开发者的幻想</p>
-</blockquote>
-</li>
-<li><p>深入学 Rust</p>
-<blockquote>
-<p>Rust 太深奥了，我需要在语言层面上投入更多</p>
-</blockquote>
-</li>
-<li><p>学 Gradle</p>
-<blockquote>
-<p>其实我觉得对于 android 开发来说，会 Gradle 足以让你成为团队的核心</p>
-</blockquote>
-</li>
-</ul>
+<p>这个已匹配可能有点不好理解，其实就是这个 if 能不能匹配上一个 else。当然也存在没有 else 的 if 语句，这个语句就被称为未匹配或者开放的。</p>
+<p>基于这个思想，我们就能把 if 语句区分为两种类型，已匹配的和未匹配的</p>
+<pre class="line-numbers language-none"><code class="language-none">stmt -&gt; matched_stmt
+	|	open_stmt
+matched_stmt -&gt; "if" expr "then" matched_stmt "else" matched_stmt
+	| 	other
+open_stmt -&gt; "if" expr "then" stmt
+	|	"if" expr "then" matched_stmt "else" open_stmt<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>上面的文法会起到把 if 和最近的 else 进行匹配的作用。在网上看到这种文法时十分的蒙圈，看了龙书才逐渐理解。</p>
 
                 
             </div>
@@ -592,7 +500,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://blog.coldrain.ink/2023/01/01/2022/">http://blog.coldrain.ink/2023/01/01/2022/</a>
+                    <a href="http://blog.coldrain.ink/2023/02/09/dangling-else/">http://blog.coldrain.ink/2023/02/09/dangling-else/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +538,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/">
-                                    <span class="chip bg-color">年度总结</span>
+                                <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">编译原理</span>
                                 </a>
                             
                         </div>
@@ -943,9 +851,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/02/09/dangling-else/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="Dangling else (悬空else)">
+                        
+                        <span class="card-title">Dangling else (悬空else)</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">编译原理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/01/24/road-to-mediocrity/">
                     <div class="card-image">
@@ -963,9 +922,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -983,55 +942,6 @@
                     
                     <a href="/tags/%E6%89%B9%E8%AF%84%E4%B8%8E%E8%87%AA%E6%88%91%E6%89%B9%E8%AF%84/">
                         <span class="chip bg-color">批评与自我批评</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/12/26/just-ln/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="解决某些linux程序缺少动态链接库的问题">
-                        
-                        <span class="card-title">解决某些linux程序缺少动态链接库的问题</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-26
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
                     </a>
                     
                 </div>
