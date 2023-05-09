@@ -1,5 +1,5 @@
 ---
-title: 各种语言中linux epoll机制的应用
+title: 各种语言中多路复用(但不是io)机制的应用
 date: 2023-05-09
 author: 寒雨
 hide: false
@@ -175,4 +175,4 @@ async fn search(path: &str,
 }
 ~~~
 
-写着写着就发现，这是不是跟之前看 Java NIO 差不多？select 这个操作不就是 linux epoll 多路复用 I/O 吗？想到以前曾发表过 NIO 只在网络编程中有用的暴论，现在看来其实还是有失偏颇的。
+写着写着就发现，这是不是跟之前看 Java NIO 差不多？select 这个操作不是很像 linux epoll 多路复用 I/O 吗？但仔细看的话其实它复用的并不是I/O操作，而是I/O操作所在协程对应的 channel。
